@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2048"
+   height="1152"
+   id="svg2995"
+   version="1.1"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="lt_Template.svg"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"
+   viewBox="0 0 1920 1080">
+  <defs
+     id="defs2997" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="663.35479"
+     inkscape:cy="596.34815"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3000">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,27.637817)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="1082.8571"
+       y="151.42857"
+       id="text3034"
+       transform="translate(0,-27.637817)"><tspan
+         sodipodi:role="line"
+         id="tspan3036"
+         x="1082.8571"
+         y="151.42857"
+         style="font-size:40px;line-height:1.25;font-family:sans-serif"> </tspan></text>
+    <rect
+       style="fill:#245080;fill-opacity:1"
+       id="rect3027"
+       width="1920"
+       height="255"
+       x="0"
+       y="797.36218"
+       ry="0" />
+    <rect
+       style="fill:#6a9fd3;fill-opacity:1"
+       id="rect3029"
+       width="1920"
+       height="122"
+       x="0"
+       y="930.36218" />
+    <rect
+       style="fill:#000000;fill-opacity:1"
+       id="rect3031"
+       width="1920"
+       height="70"
+       x="0"
+       y="982.36218" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="254.28572"
+       y="898.07648"
+       id="text3812"><tspan
+         sodipodi:role="line"
+         id="tspan3814"
+         x="254.28572"
+         y="898.07648"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:80px;line-height:1.25;font-family:Lato;-inkscape-font-specification:Lato;fill:#ffffff">[LINE ONE]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="265.7673"
+       y="968.16467"
+       id="text3812-1"><tspan
+         sodipodi:role="line"
+         id="tspan3814-7"
+         x="265.7673"
+         y="968.16467"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:36px;line-height:1.25;font-family:Lato;-inkscape-font-specification:Lato;fill:#ffffff">[LINE TWO]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="266.27347"
+       y="1022.6021"
+       id="text3812-1-4"><tspan
+         sodipodi:role="line"
+         x="266.27347"
+         y="1022.6021"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:32px;line-height:1.25;font-family:Lato;-inkscape-font-specification:Lato;fill:#ffffff"
+         id="tspan4493">[LINE THREE]</tspan></text>
+  </g>
+</svg>
