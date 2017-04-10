@@ -24,8 +24,60 @@ namespace LowerThirdsGenerator
                 }
 
                 // parse lower thirds text file
-                // expected format: three lines of text, one line of empty text
+                // expected format: up to three lines of text, one line of empty text
                 string[] lines = File.ReadAllLines(options.InputFile);
+
+                List<LowerThird> lowerThirds = new List<LowerThird>();
+
+                LowerThird currentLowerThird = new LowerThird();
+
+                foreach (string line in lines)
+                {
+                    if (string.IsNullOrWhiteSpace(line)) // empty space line signifies starting a new lower third
+                    {
+                        if (!string.IsNullOrWhiteSpace(currentLowerThird.LineOne)) // only create new instance if it has at least one line filled in
+                        {
+                            if (options.Verbose)
+                            {
+                                Console.WriteLine("Lower third parsed:");
+                                Console.WriteLine(currentLowerThird.LineOne);
+                                Console.WriteLine(currentLowerThird.LineTwo);
+                                Console.WriteLine(currentLowerThird.LineThree);
+                                Console.WriteLine("-----");
+                            }
+
+                            lowerThirds.Add(currentLowerThird);
+                            currentLowerThird = new LowerThird();
+                        }
+                    }
+                    else if (string.IsNullOrWhiteSpace(currentLowerThird.LineOne))
+                    {
+                        currentLowerThird.LineOne = line;
+                    }
+                    else if (string.IsNullOrWhiteSpace(currentLowerThird.LineTwo))
+                    {
+                        currentLowerThird.LineTwo = line;
+                    }
+                    else if (string.IsNullOrWhiteSpace(currentLowerThird.LineThree))
+                    {
+                        currentLowerThird.LineThree = line;
+                    }
+                }
+
+                // check if there is one more lower third to add (if the file didn't end with an empty line)
+                if (!string.IsNullOrWhiteSpace(currentLowerThird.LineOne))
+                {
+                    if (options.Verbose)
+                    {
+                        Console.WriteLine("Lower third parsed:");
+                        Console.WriteLine(currentLowerThird.LineOne);
+                        Console.WriteLine(currentLowerThird.LineTwo);
+                        Console.WriteLine(currentLowerThird.LineThree);
+                        Console.WriteLine("-----");
+                    }
+
+                    lowerThirds.Add(currentLowerThird);
+                }
             }
         }
     }
