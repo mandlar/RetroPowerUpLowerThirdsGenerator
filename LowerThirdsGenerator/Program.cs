@@ -55,6 +55,9 @@ namespace LowerThirdsGenerator
                                 Console.WriteLine("-----");
                             }
 
+                            if(currentLowerThird.LineOne.Length > 40 || currentLowerThird.LineTwo.Length > 80 || currentLowerThird.LineThree.Length > 90)
+                                Console.WriteLine("WARNING: " + currentLowerThird.GetLowerThirdFileName() + " might have cut off text!");
+
                             lowerThirds.Add(currentLowerThird);
                             currentLowerThird = new LowerThird();
                         }
@@ -84,6 +87,9 @@ namespace LowerThirdsGenerator
                         Console.WriteLine(currentLowerThird.LineThree);
                         Console.WriteLine("-----");
                     }
+
+                    if (currentLowerThird.LineOne.Length > 40 || currentLowerThird.LineTwo.Length > 80 || currentLowerThird.LineThree.Length > 90)
+                        Console.WriteLine("WARNING: " + currentLowerThird.GetLowerThirdFileName() + " might have cut off text!");
 
                     lowerThirds.Add(currentLowerThird);
                 }
