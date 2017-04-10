@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Svg;
 
 namespace LowerThirdsGenerator
 {
@@ -96,17 +99,25 @@ namespace LowerThirdsGenerator
                     newSVG = newSVG.Replace("[LINE TWO]", !string.IsNullOrWhiteSpace(lowerThird.LineTwo) ? lowerThird.LineTwo : "");
                     newSVG = newSVG.Replace("[LINE THREE]", !string.IsNullOrWhiteSpace(lowerThird.LineOne) ? lowerThird.LineThree : "");
 
-                    string fileName = lowerThird.GetLowerThirdFileName() + ".svg";
+                    string fileNameSVG = lowerThird.GetLowerThirdFileName() + ".svg";
+                    string fileNamePNG = lowerThird.GetLowerThirdFileName() + ".png";
 
                     // TODO: check if file already exists? or just overwrite it? maybe add an option to handle this. For now it will just overwrite
 
-                    FileStream file = File.Create(fileName);
+                    FileStream file = File.Create(fileNameSVG);
                     file.Close();
 
-                    File.WriteAllText(fileName, newSVG);
+                    File.WriteAllText(fileNameSVG, newSVG);
 
                     if(options.Verbose)
-                        Console.WriteLine("Writing lower third to " + fileName);
+                        Console.WriteLine("Writing lower third SVG to " + fileNameSVG);
+
+                    SvgDocument svgDocument = SvgDocument.Open(fileNameSVG);
+                    Bitmap bitmap = svgDocument.Draw();
+                    bitmap.Save(fileNamePNG, ImageFormat.Png);
+
+                    if (options.Verbose)
+                        Console.WriteLine("Writing lower third PNG to " + fileNamePNG);
                 }
             }
         }
