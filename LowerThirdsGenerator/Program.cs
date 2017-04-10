@@ -34,6 +34,7 @@ namespace LowerThirdsGenerator
 
                 // parse lower thirds text file
                 // expected format: up to three lines of text, one line of empty text
+                Console.WriteLine("Parsing input file...");
                 string[] lines = File.ReadAllLines(options.InputFile);
 
                 List<LowerThird> lowerThirds = new List<LowerThird>();
@@ -95,6 +96,8 @@ namespace LowerThirdsGenerator
                 }
 
                 // read in the template SVG vector file and create a vector file for each lower third
+                Console.WriteLine("Generating SVG and PNG files...");
+
                 string templateSVG = File.ReadAllText(options.TemplateFile);
 
                 foreach (LowerThird lowerThird in lowerThirds)
@@ -125,6 +128,8 @@ namespace LowerThirdsGenerator
                     if (options.Verbose)
                         Console.WriteLine("Writing lower third PNG to " + fileNamePNG);
                 }
+
+                Console.WriteLine("Done!");
             }
         }
     }
