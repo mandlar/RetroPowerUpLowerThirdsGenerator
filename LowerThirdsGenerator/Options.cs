@@ -19,6 +19,9 @@ namespace LowerThirdsGenerator
         [Option('v', "verbose", DefaultValue = false,  HelpText = "Prints all messages to standard output.")]
         public bool Verbose { get; set; }
 
+        [Option('o', "overwrite", DefaultValue = false, HelpText = "Overwrites existing SVG and PNG files.")]
+        public bool Overwrite { get; set; }
+
         [ParserState]
         public IParserState LastParserState { get; set; }
 

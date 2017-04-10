@@ -111,22 +111,34 @@ namespace LowerThirdsGenerator
                     string fileNameSVG = lowerThird.GetLowerThirdFileName() + ".svg";
                     string fileNamePNG = lowerThird.GetLowerThirdFileName() + ".png";
 
-                    // TODO: check if file already exists? or just overwrite it? maybe add an option to handle this. For now it will just overwrite
+                    if (File.Exists(fileNameSVG) && !options.Overwrite)
+                    {
+                        Console.WriteLine("ERROR: " + fileNameSVG + " already exists! SVG not generated. To overwrite the file, use -o true");
+                    }
+                    else
+                    {
+                        FileStream file = File.Create(fileNameSVG);
+                        file.Close();
 
-                    FileStream file = File.Create(fileNameSVG);
-                    file.Close();
+                        File.WriteAllText(fileNameSVG, newSVG);
 
-                    File.WriteAllText(fileNameSVG, newSVG);
+                        if (options.Verbose)
+                            Console.WriteLine("Writing lower third SVG to " + fileNameSVG);
+                    }
 
-                    if(options.Verbose)
-                        Console.WriteLine("Writing lower third SVG to " + fileNameSVG);
+                    if (File.Exists(fileNamePNG) && !options.Overwrite)
+                    {
+                        Console.WriteLine("ERROR: " + fileNamePNG + " already exists! PNG not generated. To overwrite the file, use -o true");
+                    }
+                    else
+                    {
+                        SvgDocument svgDocument = SvgDocument.Open(fileNameSVG);
+                        Bitmap bitmap = svgDocument.Draw();
+                        bitmap.Save(fileNamePNG, ImageFormat.Png);
 
-                    SvgDocument svgDocument = SvgDocument.Open(fileNameSVG);
-                    Bitmap bitmap = svgDocument.Draw();
-                    bitmap.Save(fileNamePNG, ImageFormat.Png);
-
-                    if (options.Verbose)
-                        Console.WriteLine("Writing lower third PNG to " + fileNamePNG);
+                        if (options.Verbose)
+                            Console.WriteLine("Writing lower third PNG to " + fileNamePNG);
+                    }
                 }
 
                 Console.WriteLine("Done!");
