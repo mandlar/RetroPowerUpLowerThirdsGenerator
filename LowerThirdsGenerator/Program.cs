@@ -23,6 +23,12 @@ namespace LowerThirdsGenerator
                     return;
                 }
 
+                if (!File.Exists(options.TemplateFile))
+                {
+                    Console.WriteLine("Template file does not exist!");
+                    return;
+                }
+
                 // parse lower thirds text file
                 // expected format: up to three lines of text, one line of empty text
                 string[] lines = File.ReadAllLines(options.InputFile);
@@ -77,6 +83,30 @@ namespace LowerThirdsGenerator
                     }
 
                     lowerThirds.Add(currentLowerThird);
+                }
+
+                // read in the template SVG vector file and create a vector file for each lower third
+                string templateSVG = File.ReadAllText(options.TemplateFile);
+
+                foreach (LowerThird lowerThird in lowerThirds)
+                {
+                    string newSVG = templateSVG;
+
+                    newSVG = newSVG.Replace("[LINE ONE]", lowerThird.LineOne);
+                    newSVG = newSVG.Replace("[LINE TWO]", !string.IsNullOrWhiteSpace(lowerThird.LineTwo) ? lowerThird.LineTwo : "");
+                    newSVG = newSVG.Replace("[LINE THREE]", !string.IsNullOrWhiteSpace(lowerThird.LineOne) ? lowerThird.LineThree : "");
+
+                    string fileName = lowerThird.GetLowerThirdFileName() + ".svg";
+
+                    // TODO: check if file already exists? or just overwrite it? maybe add an option to handle this. For now it will just overwrite
+
+                    FileStream file = File.Create(fileName);
+                    file.Close();
+
+                    File.WriteAllText(fileName, newSVG);
+
+                    if(options.Verbose)
+                        Console.WriteLine("Writing lower third to " + fileName);
                 }
             }
         }
