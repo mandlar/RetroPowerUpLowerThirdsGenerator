@@ -9,13 +9,24 @@ Example of a generated lower third:
 
 Run the executable `LowerThirdsGenerator.exe` with the following options:
 
--r, -read | Input file to be processed; Required
+**-r, -read**  
+Input file to be processed  
+Required
 
--t, -template | Template vector file to be used; Optional; Defaults to lt_Template.svg
+**-t, -template**  
+Template vector file to be used  
+Optional  
+Defaults to lt_Template.svg
 
--o, -overwrite | Overwrites existing SVG and PNG files if they already exist; Optional; Defaults to false
+**-o, -overwrite**  
+Overwrites existing SVG and PNG files  
+Optional  
+Defaults to false
 
--v, -verbose | Prints all messages to standard output; Optional; Defaults to false
+**-v, -verbose**  
+Prints all messages to standard output  
+Optional  
+Defaults to false
 
     LowerThirdsGenerator.exe -r input.txt -t lt_Template.svg -o True -v True
 
