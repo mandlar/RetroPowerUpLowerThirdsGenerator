@@ -81,6 +81,8 @@ Example input:
     NFL 2K1
     SEGA SPORTS | SEPT 7, 2000
     PAID: $1.50
+    
+The program will warn you if it thinks one of the lines of text will be cut off if it is too long
 
 ### Template SVG file format
 
