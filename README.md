@@ -82,6 +82,18 @@ Example input:
     SEGA SPORTS | SEPT 7, 2000
     PAID: $1.50
     
+You can also force empty lines by entering three dashes for a line. This special case is to handle if you want the first and/or second line to be empty lines, but not the second and/or third lines.
+
+Example input: 
+
+    FINAL FANTASY XV: COMPLETE OFFICIAL GUIDE
+    ---
+    PAID: $24
+    
+    ---
+    ---
+    PAID: $20
+    
 The program will warn you if it thinks one of the lines of text will be cut off if it is too long
 
 ### Template SVG file format
