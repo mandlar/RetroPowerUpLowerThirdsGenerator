@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using Svg;
@@ -43,6 +44,8 @@ namespace LowerThirdsGenerator
 
                 foreach (string line in lines)
                 {
+                    string newLine = SecurityElement.Escape(line); // encode special characters for XML (SVG uses XML formatting)
+
                     if (string.IsNullOrWhiteSpace(line)) // empty space line signifies starting a new lower third
                     {
                         if (!string.IsNullOrWhiteSpace(currentLowerThird.LineOne)) // only create new instance if it has at least one line filled in
@@ -65,15 +68,15 @@ namespace LowerThirdsGenerator
                     }
                     else if (string.IsNullOrWhiteSpace(currentLowerThird.LineOne))
                     {
-                        currentLowerThird.LineOne = line;
+                        currentLowerThird.LineOne = newLine;
                     }
                     else if (string.IsNullOrWhiteSpace(currentLowerThird.LineTwo))
                     {
-                        currentLowerThird.LineTwo = line;
+                        currentLowerThird.LineTwo = newLine;
                     }
                     else if (string.IsNullOrWhiteSpace(currentLowerThird.LineThree))
                     {
-                        currentLowerThird.LineThree = line;
+                        currentLowerThird.LineThree = newLine;
                     }
                 }
 
