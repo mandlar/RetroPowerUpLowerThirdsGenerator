@@ -105,6 +105,14 @@ namespace LowerThirdsGenerator
 
                 foreach (LowerThird lowerThird in lowerThirds)
                 {
+                    // Convert three dashes to an empty line. This is to prevent the program from creating a new Lower Third due to an empty line when you *really* want an empty line (e.g. Lines 1 and 3 have text, but not Line 2)
+                    if (lowerThird.LineOne == "---")
+                        lowerThird.LineOne = "";
+                    if (lowerThird.LineTwo == "---")
+                        lowerThird.LineTwo = "";
+                    if (lowerThird.LineThree == "---")
+                        lowerThird.LineThree = "";
+
                     string newSVG = templateSVG;
 
                     newSVG = newSVG.Replace("[LINE ONE]", lowerThird.LineOne);
