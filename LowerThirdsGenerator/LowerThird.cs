@@ -14,6 +14,11 @@ namespace LowerThirdsGenerator
         public string LineTwo { get; set; }
         public string LineThree { get; set; }
 
+        public LowerThird()
+        {
+            LineOne = LineTwo = LineThree = "";
+        }
+
         /// <summary>
         /// Converts LineOne of the lower third into a readable filename format
         /// e.g. "HELLO WORLD" becomes "lt_HelloWorld"
